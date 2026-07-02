@@ -329,14 +329,16 @@
   /* ========== HERO ========== */
   .hero {
     position: relative; height: 520px; overflow: hidden;
-    background: linear-gradient(135deg, var(--navy) 0%, #0d2847 50%, #1a3a5c 100%);
   }
-  .hero::before {
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('images/menara-felda.jpg') center center / cover no-repeat;
+  }
+  .hero-bg::after {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 80% 20%, rgba(232,117,26,0.12) 0%, transparent 60%),
-                radial-gradient(ellipse at 20% 80%, rgba(201,169,110,0.08) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(10,31,63,0.8) 0%, rgba(10,31,63,0.4) 50%, rgba(10,31,63,0.6) 100%);
   }
-  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,31,63,0.85) 0%, rgba(10,31,63,0.3) 100%); }
+
   .hero .container { position: relative; z-index: 2; height: 100%; display: flex; align-items: center; }
   .hero-content { max-width: 600px; }
   .hero-content .badge {
@@ -446,8 +448,11 @@
     .news-grid { grid-template-columns: 1fr; }
     .quick-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
-    .hero { height: 420px; }
-    .hero-content h1 { font-size: 32px; }
+    .hero { height: 360px; }
+    .hero-content h1 { font-size: 26px; }
+    .hero-content p { font-size: 14px; }
+    .hero-content .badge { font-size: 10px; padding: 3px 12px; }
+    .hero-content .btn { font-size: 13px; padding: 10px 24px; }
     .header .container { height: 64px; }
     .logo-shine img { height: 42px !important; }
     .logo-shine { max-width: 140px; }
@@ -640,7 +645,7 @@
 
 <!-- ========== HERO ========== -->
 <section class="hero">
-  <div class="hero-overlay"></div>
+  <div class="hero-bg"></div>
   <div class="container">
     <div class="hero-content">
       <div class="badge">Official Portal</div>
