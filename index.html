@@ -411,8 +411,9 @@
 
   /* ========== SUBSIDIARIES ========== */
   .subsidiary-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 24px; align-items: center; }
-  .subsidiary-item { padding: 14px 22px; background: #fff; border-radius: 10px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; transition: all 0.2s; cursor: pointer; }
+  .subsidiary-item { padding: 14px 22px; background: #fff; border-radius: 10px; border: 1px solid var(--border); display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; cursor: pointer; text-decoration: none; }
   .subsidiary-item:hover { border-color: var(--orange); }
+  .subsidiary-item .subs-logo { height: 36px; width: auto; display: block; }
   .subsidiary-item .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .subsidiary-item .dot.orange { background: var(--orange); }
   .subsidiary-item .dot.navy { background: var(--navy); }
@@ -731,14 +732,30 @@
       <div class="divider"></div>
     </div>
     <div class="subsidiary-grid">
-      <div class="subsidiary-item"><div class="dot orange"></div><span>FPMSB</span></div>
-      <div class="subsidiary-item"><div class="dot navy"></div><span>KGFB</span></div>
-      <div class="subsidiary-item"><div class="dot gold"></div><span>KF</span></div>
-      <div class="subsidiary-item"><div class="dot orange"></div><span>Yayasan FELDA</span></div>
-      <div class="subsidiary-item"><div class="dot navy"></div><span>ENCORP</span></div>
-      <div class="subsidiary-item"><div class="dot gold"></div><span>FIC</span></div>
-      <div class="subsidiary-item"><div class="dot green"></div><span>MSM</span></div>
-      <div class="subsidiary-item"><div class="dot orange"></div><span>WCAAF</span></div>
+    <a href="https://fpmsb.com/" target="_blank" class="subsidiary-item" rel="noopener">
+      <img src="images/subs-fpmsb.jpg" alt="FPMSB" class="subs-logo">
+    </a>
+    <a href="#" target="_blank" class="subsidiary-item" rel="noopener">
+      <img src="images/subs-kgfb.jpg" alt="KGFB" class="subs-logo">
+    </a>
+    <a href="#" target="_blank" class="subsidiary-item" rel="noopener">
+      <img src="images/subs-kf.jpg" alt="KF" class="subs-logo">
+    </a>
+    <a href="#" target="_blank" class="subsidiary-item" rel="noopener">
+      <div class="dot orange"></div><span>Yayasan FELDA</span>
+    </a>
+    <a href="#" target="_blank" class="subsidiary-item" rel="noopener">
+      <div class="dot navy"></div><span>ENCORP</span>
+    </a>
+    <a href="#" target="_blank" class="subsidiary-item" rel="noopener">
+      <div class="dot gold"></div><span>FIC</span>
+    </a>
+    <a href="#" target="_blank" class="subsidiary-item" rel="noopener">
+      <div class="dot green"></div><span>MSM</span>
+    </a>
+    <a href="#" target="_blank" class="subsidiary-item" rel="noopener">
+      <div class="dot orange"></div><span>WCAAF</span>
+    </a>
     </div>
   </div>
 </section>
