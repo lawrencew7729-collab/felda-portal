@@ -31,49 +31,11 @@
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 90px; }
   .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
   .logo img { display: block; }
-  .logo-shine {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    border-radius: 4px;
-    max-width: 100%;
-  }
-  .logo-shine img {
-    display: block;
-    height: 78px;
-    width: auto;
-    max-width: 100%;
-  }
-  .logo-shine::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-      115deg,
-      transparent 0%,
-      transparent 30%,
-      rgba(255,255,255,0.35) 40%,
-      rgba(255,255,248,0.5) 45%,
-      rgba(255,255,248,0.35) 50%,
-      transparent 60%,
-      transparent 100%
-    );
-    animation: shineSweep 5s ease-in-out infinite;
-    pointer-events: none;
-  }
-  .logo-shine:hover::after {
-    animation-duration: 0.8s;
-  }
-  @keyframes shineSweep {
-    0%   { left: -100%; }
-    15%  { left: -100%; }
-    35%  { left: 120%; }
-    100% { left: 120%; }
-  }
-
+  .logo-shine { position: relative; display: inline-block; overflow: hidden; border-radius: 4px; max-width: 100%; }
+  .logo-shine img { display: block; height: 78px; width: auto; max-width: 100%; }
+  .logo-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(115deg,transparent 0%,transparent 30%,rgba(255,255,255,0.35) 40%,rgba(255,255,248,0.5) 45%,rgba(255,255,248,0.35) 50%,transparent 60%,transparent 100%); animation: shineSweep 5s ease-in-out infinite; pointer-events: none; }
+  .logo-shine:hover::after { animation-duration: 0.8s; }
+  @keyframes shineSweep { 0% { left: -100%; } 15% { left: -100%; } 35% { left: 120%; } 100% { left: 120%; } }
   nav { display: flex; align-items: center; gap: 14px; }
   nav a { text-decoration: none; color: var(--text-dark); font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
   nav a:hover { color: var(--orange); background: var(--orange-bg); }
@@ -84,17 +46,8 @@
   nav .search-btn svg { width: 18px; height: 18px; fill: var(--text-muted); transition: fill 0.2s; }
 
   /* ========== PAGE BANNER ========== */
-  .page-banner {
-    background: linear-gradient(135deg, var(--navy), var(--navy-light));
-    padding: 60px 0 50px;
-    position: relative;
-    overflow: hidden;
-  }
-  .page-banner::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 80% 0%, rgba(232,117,26,0.1) 0%, transparent 60%);
-  }
+  .page-banner { background: linear-gradient(135deg, var(--navy), var(--navy-light)); padding: 60px 0 50px; position: relative; overflow: hidden; }
+  .page-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 0%, rgba(232,117,26,0.1) 0%, transparent 60%); }
   .page-banner .container { position: relative; z-index: 1; }
   .page-banner .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
   .page-banner .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
@@ -109,41 +62,13 @@
 
   /* Sidebar */
   .sidebar { position: sticky; top: 100px; align-self: start; }
-  .sidebar .menu-card {
-    background: #fff;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .sidebar .menu-title {
-    background: var(--orange);
-    color: #fff;
-    padding: 16px 20px;
-    font-weight: 700;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .sidebar a {
-    display: block;
-    padding: 12px 20px;
-    color: var(--text-dark);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    border-bottom: 1px solid var(--border);
-    transition: all 0.15s;
-    position: relative;
-  }
+  .sidebar .menu-card { background: #fff; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+  .sidebar .menu-title { background: var(--orange); color: #fff; padding: 16px 20px; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sidebar a { display: block; padding: 12px 20px; color: var(--text-dark); text-decoration: none; font-size: 14px; font-weight: 500; border-bottom: 1px solid var(--border); transition: all 0.15s; position: relative; }
   .sidebar a:last-child { border-bottom: none; }
   .sidebar a:hover, .sidebar a.active { background: var(--orange-bg); color: var(--orange); padding-left: 26px; }
-  .sidebar a.active::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: var(--orange);
-  }
+  .sidebar a.active::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--orange); }
+  .sidebar .sub-link { padding-left: 36px; font-size: 13px; color: var(--text-muted); font-weight: 400; }
 
   /* Main content */
   .main-content h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); font-weight: 700; margin-bottom: 20px; }
@@ -151,29 +76,19 @@
   .main-content p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; text-align: justify; }
   .main-content ul, .main-content ol { padding-left: 24px; margin-bottom: 16px; }
   .main-content li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 6px; }
-  .main-content .info-box {
-    background: var(--orange-bg);
-    border-left: 4px solid var(--orange);
-    padding: 20px 24px;
-    border-radius: 0 8px 8px 0;
-    margin: 24px 0;
-  }
+  .main-content .info-box { background: var(--orange-bg); border-left: 4px solid var(--orange); padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0; }
   .main-content .info-box p { margin-bottom: 0; font-size: 14px; color: var(--text-dark); }
 
   /* Service cards */
-  .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
-  .service-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
-  .service-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
-  .service-card .top { background: var(--orange-bg); padding: 24px; display: flex; align-items: center; gap: 16px; }
-  .service-card .top .icon { width: 48px; height: 48px; background: var(--orange); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; flex-shrink: 0; }
-  .service-card .top h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin: 0; }
-  .service-card .body { padding: 20px 24px; }
-  .service-card .body p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px; text-align: left; }
-  .service-card .body ul { padding-left: 18px; margin-bottom: 12px; }
-  .service-card .body li { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 4px; }
-  .service-card .body .badge { display: inline-block; background: var(--orange-bg); color: var(--orange); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
-  .service-link { display: inline-block; color: var(--orange); text-decoration: none; font-weight: 600; font-size: 14px; margin-top: 8px; }
-  .service-link:hover { text-decoration: underline; }
+  .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 10px; }
+  .service-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; transition: all 0.2s; display: flex; flex-direction: column; }
+  .service-card:hover { border-color: var(--orange); box-shadow: 0 4px 20px rgba(232,117,26,0.1); transform: translateY(-3px); }
+  .service-card .sc-icon { width: 56px; height: 56px; background: var(--orange-bg); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+  .service-card .sc-icon svg { width: 30px; height: 30px; fill: var(--orange); }
+  .service-card h4 { font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+  .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 0; text-align: justify; flex: 1; }
+  .service-card .sc-link { margin-top: 16px; color: var(--orange); font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .service-card .sc-link:hover { text-decoration: underline; }
 
   /* ========== FOOTER ========== */
   .footer { background: var(--navy); color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 0; }
@@ -220,14 +135,14 @@
   <div class="container">
     <div class="top-bar-left">
       <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> FAQ</a>
-      <a href="#"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Contact</a>
-      <a href="#"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg> Feedback</a>
-      <a href="#">Sitemap</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Hubungi</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg> Maklum Balas</a>
+      <a href="#">Peta Laman</a>
     </div>
     <div class="top-bar-right">
-      <a href="#">🇲🇾 BM</a>
+      <a href="#" class="active">🇲🇾 BM</a>
       <span class="divider"></span>
-      <a href="#" class="active">🇬🇧 EN</a>
+      <a href="#">🇬🇧 EN</a>
     </div>
   </div>
 </div>
@@ -241,12 +156,12 @@
       </div>
     </a>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#">Public</a>
-      <a href="#">Integrity</a>
+      <a href="index.html">Utama</a>
+      <a href="#">Awam</a>
+      <a href="#">Integriti</a>
       <a href="#">Media</a>
-      <a href="setlers.html" class="active">Settlers</a>
-      <a href="#">Staff</a>
+      <a href="#" class="active">Peneroka</a>
+      <a href="#">Staf</a>
       <a href="#">Tender</a>
       <button class="search-btn"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
     </nav>
@@ -257,7 +172,7 @@
 <section class="page-banner">
   <div class="container">
     <div class="breadcrumb">
-      <a href="index.html">Home</a> / <a href="#">Peneroka</a> / <span>Perkhidmatan</span>
+      <a href="index.html">Utama</a> / <a href="#">PENEROKA</a> / <span>Perkhidmatan</span>
     </div>
     <h1>Perkhidmatan</h1>
     <div class="divider"></div>
@@ -271,8 +186,8 @@
       <!-- Sidebar -->
       <aside class="sidebar">
         <div class="menu-card">
-          <div class="menu-title">Peneroka</div>
-          <a href="perakaunan-peneroka.html">Perakaunan Peneroka</a><a href="perkhidmatan.html" class="active">Perkhidmatan</a>
+          <div class="menu-title">PENEROKA</div>
+          <a href="perakaunan-peneroka.html">Perakaunan Peneroka</a>
           <a href="perkhidmatan.html" class="active">Perkhidmatan</a>
           <a href="lokasi-rancangan.html">Lokasi Rancangan</a>
           <a href="sumbangan-sosioekonomi.html">Sumbangan Sosioekonomi</a>
@@ -282,80 +197,57 @@
       <!-- Main Content -->
       <div class="main-content">
         <h2>Perkhidmatan Peneroka</h2>
-        <p>FELDA menyediakan pelbagai perkhidmatan dan bantuan kepada peneroka dan komuniti setempat. Berikut adalah antara perkhidmatan yang disediakan.</p>
-
-        <div class="info-box">
-          <p><strong>📌 Sedang Dikemaskini —</strong> Maklumat terkini mengenai perkhidmatan akan dikemaskini dari semasa ke semasa.</p>
-        </div>
+        <p>FELDA menyediakan pelbagai perkhidmatan dan bantuan kepada peneroka bagi meningkatkan kualiti hidup dan kesejahteraan mereka.</p>
 
         <div class="service-grid">
           <div class="service-card">
-            <div class="top">
-              <div class="icon">🎓</div>
-              <h3>Bantuan Pinjaman Pendidikan</h3>
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
             </div>
-            <div class="body">
-              <p>Skim pinjaman pendidikan untuk anak-anak peneroka melanjutkan pelajaran ke peringkat diploma, ijazah dan lain-lain. Termasuk pinjaman komputer riba RM2,400.</p>
-              <ul>
-                <li>Pinjaman yuran pengajian</li>
-                <li>Pinjaman komputer riba sehingga RM2,400</li>
-                <li>Kadar faedah rendah</li>
-                <li>Tempoh bayaran balik fleksibel</li>
-              </ul>
-              <a href="#" class="service-link">Mohon Pinjaman →</a>
-            </div>
+            <h4>Bantuan Pinjaman Pendidikan</h4>
+            <p>Skim bantuan pinjaman pendidikan bagi membantu meringankan beban kewangan keluarga peneroka untuk pendidikan anak-anak mereka ke peringkat lebih tinggi.</p>
+            <a href="#" class="sc-link">Selengkapnya →</a>
           </div>
 
           <div class="service-card">
-            <div class="top">
-              <div class="icon">🏠</div>
-              <h3>Pinjaman Pembesaran Rumah</h3>
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg>
             </div>
-            <div class="body">
-              <p>Pinjaman untuk membantu peneroka membesarkan atau membaik pulih rumah kediaman mereka di tanah rancangan FELDA.</p>
-              <ul>
-                <li>Pinjaman sehingga RM30,000</li>
-                <li>Untuk pembesaran dan pengubahsuaian rumah</li>
-                <li>Tempoh bayaran balik sehingga 15 tahun</li>
-                <li>Kadar faedah kompetitif</li>
-              </ul>
-              <a href="#" class="service-link">Mohon Pinjaman →</a>
-            </div>
+            <h4>Bantuan Komputer</h4>
+            <p>Pinjaman kepada peneroka yang layak berjumlah RM2,400 dan tiada faedah dikenakan. Membantu peneroka memiliki komputer untuk kegunaan keluarga.</p>
+            <a href="#" class="sc-link">Selengkapnya →</a>
           </div>
 
           <div class="service-card">
-            <div class="top">
-              <div class="icon">🕊️</div>
-              <h3>Bantuan Khairat Kematian</h3>
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 9.3V4h-3v2.6L12 3 2 12h3v8h5v-6h4v6h5v-8h3l-3-2.7zm-9 .7c0-1.1.9-2 2-2s2 .9 2 2h-4z"/></svg>
             </div>
-            <div class="body">
-              <p>Bantuan kewangan kepada waris peneroka yang meninggal dunia. Bantuan ini merangkumi kos pengurusan jenazah dan sumbangan kepada keluarga.</p>
-              <ul>
-                <li>Bantuan pengurusan jenazah</li>
-                <li>Sumbangan kepada waris</li>
-                <li>Proses tuntutan yang mudah</li>
-                <li>Pembayaran segera</li>
-              </ul>
-              <a href="#" class="service-link">Tuntut Bantuan →</a>
-            </div>
+            <h4>Pinjaman Pembesaran Rumah</h4>
+            <p>Bertujuan memberi kemudahan kepada peneroka membina semula atau mengubah suai rumah di tanah rancangan untuk keselesaan keluarga.</p>
+            <a href="#" class="sc-link">Selengkapnya →</a>
           </div>
 
           <div class="service-card">
-            <div class="top">
-              <div class="icon">🤝</div>
-              <h3>Tabung Kebajikan</h3>
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 4c-4 0-6.5 2-8 4-1.5-2-4-4-8-4v12c4 0 6.5-2 8-4 1.5 2 4 4 8 4V4z"/></svg>
             </div>
-            <div class="body">
-              <p>Tabung kebajikan untuk membantu peneroka yang menghadapi kesulitan kewangan akibat bencana alam, kemalangan, atau masalah kesihatan.</p>
-              <ul>
-                <li>Bantuan bencana alam</li>
-                <li>Bantuan perubatan dan kesihatan</li>
-                <li>Bantuan pendidikan anak yatim</li>
-                <li>Bantuan warga emas</li>
-              </ul>
-              <a href="#" class="service-link">Mohon Bantuan →</a>
-            </div>
+            <h4>Bantuan Khairat Kematian</h4>
+            <p>Bantuan menguruskan jenazah dan mengurangkan bebanan hutang yang ditanggung oleh waris peneroka yang meninggal dunia.</p>
+            <a href="#" class="sc-link">Selengkapnya →</a>
           </div>
+
+          <div class="service-card">
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <h4>Tabung Kebajikan</h4>
+            <p>Membantu warga peneroka yang menghidapi penyakit kronik dengan bantuan kewangan dan sokongan kebajikan yang lain.</p>
+            <a href="#" class="sc-link">Selengkapnya →</a>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <p><strong>📌 Maklumat Lanjut:</strong> Untuk pertanyaan mengenai mana-mana perkhidmatan di atas, sila hubungi Pejabat FELDA berhampiran atau Bahagian Khidmat Peneroka di talian 03-2191 2191.</p>
         </div>
       </div>
     </div>
@@ -373,16 +265,16 @@
           <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>03-2191 2191</span></div>
           <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>jks@felda.net.my</span></div>
         </div>
-        <div class="footer-col"><h4>Quick Links</h4><a href="#">About FELDA</a><a href="#">Corporate</a><a href="#">Online Application</a><a href="#">Visitor Counter</a><a href="#">List of Assets</a></div>
-        <div class="footer-col"><h4>Services</h4><a href="#">Settlers' Accounting</a><a href="#">Education Loan</a><a href="#">Welfare Funds</a><a href="#">Land Settlement</a><a href="#">Tender</a></div>
-        <div class="footer-col"><h4>Support</h4><a href="#">FAQ</a><a href="#">Contact Us</a><a href="#">Feedback</a><a href="#">Sitemap</a><a href="#">Staff Login</a></div>
+        <div class="footer-col"><h4>Pautan Pantas</h4><a href="about-felda.html">Mengenai FELDA</a><a href="background.html">Korporat</a><a href="permohonan-online.html">Permohonan Online</a><a href="#">Statistik Pelawat</a><a href="#">Senarai Aset</a></div>
+        <div class="footer-col"><h4>Perkhidmatan</h4><a href="perakaunan-peneroka.html">Perakaunan Peneroka</a><a href="perkhidmatan.html">Pinjaman Pendidikan</a><a href="sumbangan-sosioekonomi.html">Tabung Kebajikan</a><a href="lokasi-rancangan.html">Lokasi Rancangan</a><a href="#">Tender</a></div>
+        <div class="footer-col"><h4>Sokongan</h4><a href="#">FAQ</a><a href="#">Hubungi Kami</a><a href="#">Maklum Balas</a><a href="#">Peta Laman</a><a href="#">Staf Login</a></div>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <div class="links"><a href="#">Privacy Policy</a><a href="#">Security Policy</a><a href="#">Disclaimer</a><a href="#">Sitemap</a></div>
-      <div class="copyright">Copyright Reserved 2025 © FELDA</div>
+      <div class="links"><a href="#">Dasar Privasi</a><a href="#">Dasar Keselamatan</a><a href="#">Penafian</a><a href="#">Peta Laman</a></div>
+      <div class="copyright">Hak Cipta Terpelihara 2025 © FELDA</div>
       <div class="footer-socials">
         <a href="#"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg></a>
         <a href="#"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.85.38-1.78.64-2.73.76 1-.6 1.76-1.54 2.12-2.67-.93.55-1.96.95-3.06 1.17a4.77 4.77 0 0 0-8.12 4.35c-3.97-.2-7.5-2.1-9.85-5-.4.7-.64 1.5-.64 2.36 0 1.63.83 3.07 2.1 3.91-.77-.02-1.5-.24-2.13-.59v.06c0 2.28 1.62 4.18 3.76 4.62-.4.1-.82.16-1.25.16-.3 0-.6-.03-.89-.08.6 1.87 2.33 3.23 4.38 3.27-1.6 1.26-3.62 2-5.82 2-.38 0-.75-.02-1.12-.07A6.73 6.73 0 0 0 12.3 21c5.44 0 8.41-4.5 8.41-8.41 0-.13 0-.25-.01-.38.58-.42 1.08-.94 1.48-1.54z"/></svg></a>
