@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FELDA — Home (Design Mockup v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #1e293b;
+    background: #fff;
+    line-height: 1.6;
+  }
+
+  /* ========== COLORS ========== */
+  :root {
+    --orange: #E8751A;
+    --orange-dark: #D46512;
+    --orange-light: #FF8C3A;
+    --orange-bg: #FFF4EB;
+    --navy: #1A2E4A;
+    --navy-light: #2A4060;
+    --gold: #C9A96E;
+    --gold-light: #E0C992;
+    --green: #2D6A4F;
+    --bg-light: #F8F9FA;
+    --bg-card: #FFFFFF;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+
+  /* ========== TOP BAR ========== */
+  .top-bar {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 3px solid var(--orange);
+  }
+  .top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-bar-left { display: flex; gap: 18px; align-items: center; }
+  .top-bar-left a { color: rgba(255,255,255,0.75); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+  .top-bar-left a:hover { color: var(--orange); }
+  .top-bar-left a svg { width: 16px; height: 16px; fill: currentColor; }
+  .top-bar-right { display: flex; gap: 12px; align-items: center; }
+  .top-bar-right a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 2px 10px; border-radius: 4px; font-weight: 500; font-size: 12px; transition: all 0.2s; }
+  .top-bar-right a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+  .top-bar-right a.active { color: #fff; background: var(--orange); }
+  .top-bar-right .divider { width: 1px; height: 14px; background: rgba(255,255,255,0.2); }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ========== HEADER ========== */
+  .header {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 2px 8px rgba(232,117,26,0.2);
+  }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-text strong { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); letter-spacing: 1px; line-height: 1.2; }
+  .logo-text span { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
+  .logo-badge {
+    font-size: 10px;
+    background: var(--orange-bg);
+    color: var(--orange);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-left: 8px;
+    border: 1px solid rgba(232,117,26,0.2);
+  }
+
+  /* ========== NAV ========== */
+  nav { display: flex; align-items: center; gap: 2px; }
+  nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  nav a:hover { color: var(--orange); background: var(--orange-bg); }
+  nav a.active { color: #fff; background: var(--orange); }
+  nav a.has-sub::after { content: '▾'; margin-left: 4px; font-size: 10px; color: inherit; }
+  nav .search-btn {
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-light);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 8px;
+  }
+  nav .search-btn:hover { background: var(--orange-bg); }
+  nav .search-btn:hover svg { fill: var(--orange); }
+  nav .search-btn svg { width: 18px; height: 18px; fill: var(--text-muted); transition: fill 0.2s; }
+
+  /* ========== HERO ========== */
+  .hero {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d2847 50%, #1a3a5c 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 80% 20%, rgba(232,117,26,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(201,169,110,0.08) 0%, transparent 50%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(transparent, rgba(232,117,26,0.06));
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,31,63,0.85) 0%, rgba(10,31,63,0.3) 100%);
+  }
+  .hero .container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .hero-content { max-width: 600px; }
+  .hero-content .badge {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero-content h1 span { color: var(--orange); }
+  .hero-content p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  .hero-content .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: var(--orange);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s;
+  }
+  .hero-content .btn:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,117,26,0.35); }
+  .hero-content .btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+  /* ========== SECTION TITLE ========== */
+  .section-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .section-title .label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    background: var(--orange-bg);
+    padding: 2px 14px;
+    border-radius: 20px;
+  }
+  .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .section-title .divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--gold));
+    margin: 14px auto 0;
+    border-radius: 2px;
+  }
+
+  /* ========== SECTIONS ========== */
+  section { padding: 72px 0; }
+  section.bg-light { background: var(--bg-light); }
+
+  /* ========== LATEST NEWS ========== */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .news-featured {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    background: #fff;
+    transition: transform 0.3s;
+    border: 1px solid var(--border);
+  }
+  .news-featured:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+  .news-featured .img {
+    height: 280px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+  .news-featured .img::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(232,117,26,0.1) 0%, transparent 60%);
+  }
+  .news-featured .img .placeholder-icon {
+    width: 70px; height: 70px;
+    border: 3px solid var(--orange);
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+  .news-featured .body { padding: 28px; }
+  .news-featured .body .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--orange);
+    background: var(--orange-bg);
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .news-featured .body h3 { font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; line-height: 1.4; }
+  .news-featured .body .meta { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+  .news-featured .body .excerpt { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
+  .news-featured .body .read-more {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .news-featured .body .read-more:hover { gap: 10px; }
+
+  .news-list { display: flex; flex-direction: column; gap: 14px; }
+  .news-item {
+    display: flex;
+    gap: 20px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: all 0.2s;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-left: 4px solid transparent;
+  }
+  .news-item:hover { transform: translateX(4px); border-left-color: var(--orange); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .news-item .thumb {
+    width: 100px;
+    height: 80px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--orange-bg), #f0e6d8);
+  }
+  .news-item .info { flex: 1; }
+  .news-item .info h4 { font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; line-height: 1.4; }
+  .news-item .info .date { font-size: 12px; color: var(--text-muted); }
+
+  /* ========== QUICK LINKS ========== */
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .quick-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .quick-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--gold));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .quick-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+  .quick-card:hover::before { opacity: 1; }
+  .quick-card .icon {
+    width: 64px; height: 64px;
+    margin: 0 auto 18px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 700; color: #fff;
+  }
+  .quick-card .icon.orange { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); }
+  .quick-card .icon.navy { background: linear-gradient(135deg, var(--navy), var(--navy-light)); }
+  .quick-card .icon.gold { background: linear-gradient(135deg, var(--gold), #d4b87a); color: var(--navy); }
+  .quick-card h3 { font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+  .quick-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+  .quick-card .btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: var(--orange);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s;
+  }
+  .quick-card .btn-link:hover { background: var(--orange-dark); box-shadow: 0 4px 12px rgba(232,117,26,0.3); }
+  .quick-card .btn-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+  /* ========== SUBSIDIARIES ========== */
+  .subsidiary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+    align-items: center;
+  }
+  .subsidiary-item {
+    padding: 14px 22px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .subsidiary-item:hover { border-color: var(--orange); box-shadow: 0 4px 16px rgba(232,117,26,0.08); }
+  .subsidiary-item .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .subsidiary-item .dot.orange { background: var(--orange); }
+  .subsidiary-item .dot.navy { background: var(--navy); }
+  .subsidiary-item .dot.gold { background: var(--gold); }
+  .subsidiary-item .dot.green { background: var(--green); }
+  .subsidiary-item span { font-size: 13px; font-weight: 500; color: var(--text-dark); white-space: nowrap; }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+  }
+  .footer-main { padding: 56px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--orange);
+    margin-bottom: 18px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--orange);
+  }
+  .footer-col p { line-height: 1.8; font-size: 13px; color: rgba(255,255,255,0.65); }
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-col .contact-item { display: flex; gap: 10px; margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.65); }
+  .footer-col .contact-item svg { width: 16px; height: 16px; fill: var(--orange); flex-shrink: 0; margin-top: 3px; }
+
+  .footer-bottom { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom .links { display: flex; gap: 20px; }
+  .footer-bottom .links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 12px; transition: color 0.2s; }
+  .footer-bottom .links a:hover { color: var(--orange); }
+  .footer-bottom .copyright { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .footer-socials { display: flex; gap: 10px; }
+  .footer-socials a {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .footer-socials a:hover { background: var(--orange); }
+  .footer-socials a svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.7); transition: fill 0.2s; }
+  .footer-socials a:hover svg { fill: #fff; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 968px) {
+    .news-grid { grid-template-columns: 1fr; }
+    .quick-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero { height: 420px; }
+    .hero-content h1 { font-size: 32px; }
+    .header .container { height: 64px; }
+    nav { display: none; }
+  }
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .subsidiary-grid { gap: 10px; }
+    .subsidiary-item { padding: 10px 14px; }
+    .subsidiary-item span { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> FAQ</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Contact</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg> Feedback</a>
+      <a href="#">Sitemap</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#">🇲🇾 BM</a>
+      <span class="divider"></span>
+      <a href="#" class="active">🇬🇧 EN</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HEADER ========== -->
+<header class="header">
+  <div class="container">
+    <a href="#" class="logo">
+      <div class="logo-icon">F</div>
+      <div class="logo-text">
+        <strong>FELDA</strong>
+        <span>Federal Land Development Authority</span>
+      </div>
+      <div class="logo-badge">70</div>
+    </a>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#" class="has-sub">Public</a>
+      <a href="#" class="has-sub">Integrity</a>
+      <a href="#" class="has-sub">Media</a>
+      <a href="#" class="has-sub">Settlers</a>
+      <a href="#">Staff</a>
+      <a href="#">Tender</a>
+      <button class="search-btn">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="badge">Official Portal</div>
+      <h1>Welcome to <span>FELDA’s</span> Official Portal</h1>
+      <p>Federal Land Development Authority — Empowering communities, developing land, and building a sustainable future for Malaysia since 1956.</p>
+      <a href="#" class="btn">
+        Discover More
+        <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LATEST NEWS ========== -->
+<section>
+  <div class="container">
+    <div class="section-title">
+      <div class="label">Latest Updates</div>
+      <h2>Berita Terkini</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-featured">
+        <div class="img">
+          <div class="placeholder-icon"></div>
+        </div>
+        <div class="body">
+          <div class="tag">Hebahan 2026</div>
+          <h3>Harmoni Ramadan: Jalinan Ukhuwah MB Pahang dan Warga FELDA Terus Utuh</h3>
+          <div class="meta">📅 Thursday, March 19, 2026 &nbsp;·&nbsp; 📍 Dewan Kompleks SUKAN UMPSA, Gambang</div>
+          <div class="excerpt">Majlis silaturahim yang dihadiri oleh Menteri Besar Pahang bersama warga FELDA dalam suasana Ramadan yang penuh keberkatan.</div>
+          <a href="#" class="read-more">Baca Selengkapnya →</a>
+        </div>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <div class="thumb"></div>
+          <div class="info">
+            <h4>Program Transformasi Digital FELDA 2026</h4>
+            <div class="date">📅 March 15, 2026</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="thumb"></div>
+          <div class="info">
+            <h4>Kertas Putih FELDA: Hala Tuju Baharu Peneroka</h4>
+            <div class="date">📅 March 10, 2026</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="thumb"></div>
+          <div class="info">
+            <h4>Majlis Pelancaran Sistem Pembayaran Digital</h4>
+            <div class="date">📅 March 5, 2026</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="thumb"></div>
+          <div class="info">
+            <h4>Kejayaan Program Usahawan Peneroka 2025</h4>
+            <div class="date">📅 February 28, 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== QUICK LINKS ========== -->
+<section class="bg-light">
+  <div class="container">
+    <div class="section-title">
+      <div class="label">Digital Services</div>
+      <h2>Pautan Lain</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quick-grid">
+      <div class="quick-card">
+        <div class="icon orange">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <h3>RISE</h3>
+        <p>Platform digital bersepadu terkini daripada FELDA untuk memacu transformasi pengurusan ladang dan komuniti peneroka.</p>
+        <a href="#" class="btn-link">
+          Klik di sini
+          <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+        </a>
+      </div>
+      <div class="quick-card">
+        <div class="icon navy">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v1.81c-1.44.38-3.69 1.6-3.69 3.74 0 2.29 1.79 3.62 4.29 4.27 2.42.63 3.01 1.34 3.01 2.21 0 1.09-.96 1.95-2.61 1.95-1.79 0-2.83-.67-2.99-2.1H7.1c.13 2.14 1.56 3.58 3.9 4.05V21h3v-1.77c1.64-.38 3.52-1.56 3.52-3.73 0-2.48-1.85-3.76-4.32-4.42z"/></svg>
+        </div>
+        <h3>Smart Payment System</h3>
+        <p>Pembayaran Digital, Urusan Lebih Mudah. Sistem pembayaran pintar untuk memudahkan transaksi warga FELDA.</p>
+        <a href="#" class="btn-link">
+          Klik di sini
+          <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+        </a>
+      </div>
+      <div class="quick-card">
+        <div class="icon gold">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <h3>myagreement</h3>
+        <p>Proses perjanjian menjadi lebih telus dan teratur. Jimat masa dan kos, akses dokumen anda bila-bila masa.</p>
+        <a href="#" class="btn-link">
+          Klik di sini
+          <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SUBSIDIARIES ========== -->
+<section>
+  <div class="container">
+    <div class="section-title">
+      <div class="label">Group of Companies</div>
+      <h2>Anak Syarikat Di Bawah FELDA</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="subsidiary-grid">
+      <div class="subsidiary-item"><div class="dot orange"></div><span>FPMSB</span></div>
+      <div class="subsidiary-item"><div class="dot navy"></div><span>KGFB</span></div>
+      <div class="subsidiary-item"><div class="dot gold"></div><span>KF</span></div>
+      <div class="subsidiary-item"><div class="dot orange"></div><span>Yayasan FELDA</span></div>
+      <div class="subsidiary-item"><div class="dot navy"></div><span>ENCORP</span></div>
+      <div class="subsidiary-item"><div class="dot gold"></div><span>FIC</span></div>
+      <div class="subsidiary-item"><div class="dot green"></div><span>MSM</span></div>
+      <div class="subsidiary-item"><div class="dot orange"></div><span>WCAAF</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>FELDA</h4>
+          <p>Federal Land Development Authority<br>
+          FELDA Tower, Platinum Park,<br>
+          No. 11, Persiaran KLCC,<br>
+          50088 Kuala Lumpur, Malaysia.</p>
+          <br>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>03-2191 2191</span>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>jks@felda.net.my</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#">About FELDA</a>
+          <a href="#">Corporate</a>
+          <a href="#">Online Application</a>
+          <a href="#">Visitor Counter</a>
+          <a href="#">List of Assets</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#">Settlers' Accounting</a>
+          <a href="#">Education Loan</a>
+          <a href="#">Welfare Funds</a>
+          <a href="#">Land Settlement</a>
+          <a href="#">Tender</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Feedback</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Staff Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <div class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Security Policy</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="copyright">Copyright Reserved 2025 © FELDA</div>
+      <div class="footer-socials">
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.85.38-1.78.64-2.73.76 1-.6 1.76-1.54 2.12-2.67-.93.55-1.96.95-3.06 1.17a4.77 4.77 0 0 0-8.12 4.35c-3.97-.2-7.5-2.1-9.85-5-.4.7-.64 1.5-.64 2.36 0 1.63.83 3.07 2.1 3.91-.77-.02-1.5-.24-2.13-.59v.06c0 2.28 1.62 4.18 3.76 4.62-.4.1-.82.16-1.25.16-.3 0-.6-.03-.89-.08.6 1.87 2.33 3.23 4.38 3.27-1.6 1.26-3.62 2-5.82 2-.38 0-.75-.02-1.12-.07A6.73 6.73 0 0 0 12.3 21c5.44 0 8.41-4.5 8.41-8.41 0-.13 0-.25-.01-.38.58-.42 1.08-.94 1.48-1.54z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
