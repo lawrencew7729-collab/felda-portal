@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FELDA — About FELDA</title>
+<title>FELDA — Sumbangan Khidmat Sosial</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -13,7 +13,7 @@
   :root { --orange: #E8751A; --orange-dark: #D46512; --orange-bg: #FFF4EB; --navy: #1A2E4A; --navy-light: #2A4060; --gold: #C9A96E; --bg-light: #F8F9FA; --text-dark: #1e293b; --text-muted: #64748b; --border: #e2e8f0; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-  /* ========== TOP BAR (same as homepage) ========== */
+  /* ========== TOP BAR ========== */
   .top-bar { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 13px; padding: 6px 0; border-bottom: 3px solid var(--orange); }
   .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
   .top-bar-left { display: flex; gap: 18px; align-items: center; }
@@ -26,7 +26,7 @@
   .top-bar-right a.active { color: #fff; background: var(--orange); }
   .top-bar-right .divider { width: 1px; height: 14px; background: rgba(255,255,255,0.2); }
 
-  /* ========== HEADER (same as homepage) ========== */
+  /* ========== HEADER ========== */
   .header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04);}
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 90px; }
   .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
@@ -162,7 +162,24 @@
   }
   .main-content .info-box p { margin-bottom: 0; font-size: 14px; color: var(--text-dark); }
 
-  /* ========== FOOTER (same) ========== */
+  /* Photo placeholder */
+  .photo-placeholder {
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(135deg, var(--orange-bg), #f0e6d8);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;
+    border: 2px dashed var(--border);
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .photo-placeholder svg { width: 48px; height: 48px; fill: var(--text-muted); opacity: 0.4; margin-bottom: 8px; }
+
+  /* ========== FOOTER ========== */
   .footer { background: var(--navy); color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 0; }
   .footer-main { padding: 56px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
@@ -191,6 +208,7 @@
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .header .container { height: 64px; }
     .logo-shine img { height: 38px !important; }
+    .photo-placeholder { height: 220px; }
   }
   @media (max-width: 640px) {
     .footer-grid { grid-template-columns: 1fr; }
@@ -243,9 +261,9 @@
 <section class="page-banner">
   <div class="container">
     <div class="breadcrumb">
-      <a href="index.html">Home</a> / <a href="#" class="active">Public</a> / <span>About FELDA</span>
+      <a href="index.html">Home</a> / <a href="#">Public</a> / <span>Sumbangan Khidmat Sosial</span>
     </div>
-    <h1>About FELDA</h1>
+    <h1>Sumbangan Khidmat Sosial</h1>
     <div class="divider"></div>
   </div>
 </section>
@@ -258,8 +276,8 @@
       <aside class="sidebar">
         <div class="menu-card">
           <div class="menu-title">Public</div>
-          <a href="about-felda.html" class="active">About FELDA</a>
-          <a href="#">Kertas Putih FELDA</a>
+          <a href="about-felda.html">About FELDA</a>
+          <a href="kertas-putih.html">Kertas Putih FELDA</a>
           <div style="height:1px;background:var(--border);margin:0 16px"></div>
           <a href="background.html">Background</a>
           <a href="misi-visi.html">Mission & Vision</a>
@@ -267,38 +285,110 @@
           <a href="#">Organization Chart</a>
           <div style="height:1px;background:var(--border);margin:0 16px"></div>
           <a href="permohonan-online.html">Online Application</a>
-          <a href="sumbangan-khidmat-sosial.html">Social Services Contribution</a>
+          <a href="sumbangan-khidmat-sosial.html" class="active">Social Services Contribution</a>
           <a href="#">Visitor Counter</a>
           <a href="#">List of Assets</a>
         </div>
       </aside>
 
       <!-- Main Content -->
-      <div class="main-content"><h2>Federal Land Development Authority</h2>
-        <p>FELDA (Federal Land Development Authority) was established on July 1, 1956 under the Land Development Ordinance of 1956. It was founded with the primary objective of eradicating poverty through land development and settlement of the rural poor. Since its inception, FELDA has been at the forefront of Malaysia's agricultural and rural development transformation.</p>
-        <p>The agency was created during a time when Malaysia (then Malaya) was facing significant rural poverty. The government recognized that land development could be a powerful tool for socio-economic transformation, and FELDA was tasked with implementing this vision.</p>
+      <div class="main-content">
+        <h2>Sumbangan Khidmat Sosial FELDA</h2>
+        <p>FELDA komited dalam melaksanakan tanggungjawab sosial korporat (CSR) melalui pelbagai program sumbangan khidmat sosial yang memberi manfaat kepada peneroka, komuniti setempat, dan masyarakat Malaysia secara amnya. Inisiatif ini mencerminkan dedikasi FELDA terhadap kesejahteraan sosial dan pembangunan komuniti yang mampan.</p>
+        <p>Program sumbangan khidmat sosial FELDA merangkumi pelbagai bidang termasuk pendidikan, kesihatan, kebajikan, pembangunan komuniti, dan bantuan bencana. Setiap program dirancang dan dilaksanakan dengan teliti untuk memastikan impak yang maksimum kepada golongan sasaran.</p>
 
         <div class="info-box">
-          <p><strong>📌 Did You Know?</strong> FELDA settlers (peneroka) manage oil palm and rubber plantations that contribute significantly to Malaysia's agricultural output, making the country one of the world's largest palm oil producers.</p>
+          <p><strong>📌 Komitmen Kami:</strong> FELDA sentiasa berusaha untuk memberi kembali kepada masyarakat melalui program-program khidmat sosial yang bermakna dan berimpak tinggi.</p>
         </div>
 
-        <h3>Milestones</h3>
+        <!-- Photo placeholder -->
+        <div class="photo-placeholder">
+          <div style="text-align:center">
+            <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            <p style="margin-top:4px">[ Photo — Sila upload gambar ]</p>
+          </div>
+        </div>
+
+        <h3>Program Pendidikan</h3>
         <ul>
-          <li><strong>1956</strong> — FELDA established under the Land Development Ordinance</li>
-          <li><strong>1958</strong> — First land development scheme launched in Sungai Tekam, Pahang</li>
-          <li><strong>1960s</strong> — Rapid expansion of land schemes across Peninsular Malaysia</li>
-          <li><strong>1970s</strong> — Introduction of palm oil as primary crop</li>
-          <li><strong>1980s</strong> — FELDA becomes the world's largest palm oil plantation manager</li>
-          <li><strong>1990s</strong> — Diversification into downstream activities and corporate ventures</li>
-          <li><strong>2000s</strong> — Restructuring and corporatisation of FELDA's assets</li>
-          <li><strong>2026</strong> — Celebrating 70 years of service to the nation</li>
+          <li><strong>Skim Pinjaman Pelajaran</strong> — Pinjaman pendidikan kepada anak-anak peneroka yang melanjutkan pelajaran ke institusi pengajian tinggi</li>
+          <li><strong>Bantuan Yuran Sekolah</strong> — Bantuan kewangan untuk yuran persekolahan anak-anak peneroka</li>
+          <li><strong>Program Bimbingan Akademik</strong> — Kelas bimbingan percuma untuk pelajar-pelajar dari komuniti FELDA</li>
+          <li><strong>Biasiswa Kecemerlangan</strong> — Anugerah kepada pelajar cemerlang dari kalangan anak peneroka</li>
         </ul>
 
-        <h3>Key Achievements</h3>
+        <h3>Program Kesihatan & Kebajikan</h3>
         <ul>
-          <li>Over 800,000 hectares of land developed</li>
-          <li>More than 112,000 settler families settled</li>
-          <li>Development of over 300 settlements nationwide</li>
-          <li>Creation of a complete ecosystem including schools, clinics, and infrastructure</li>
-          <li>Significant contribution to Malaysia's palm oil industry</li>
+          <li><strong>Klinik Bergerak FELDA</strong> — Perkhidmatan kesihatan bergerak ke kawasan penempatan FELDA</li>
+          <li><strong>Program Pemeriksaan Kesihatan Percuma</strong> — Saringan kesihatan asas untuk warga emas dan peneroka</li>
+          <li><strong>Bantuan Perubatan</strong> — Bantuan kewangan untuk rawatan perubatan peneroka yang memerlukan</li>
+          <li><strong>Program Bantuan OKU</strong> — Bantuan dan sokongan kepada peneroka dan keluarga yang mempunyai orang kurang upaya</li>
         </ul>
+
+        <h3>Pembanguan Komuniti</h3>
+        <ul>
+          <li><strong>Program Keusahawanan Peneroka</strong> — Latihan dan bimbingan usahawan dalam kalangan peneroka dan generasi muda</li>
+          <li><strong>Program Pembangunan Generasi Baharu</strong> — Inisiatif pembangunan kemahiran dan kerjaya untuk belia FELDA</li>
+          <li><strong>Program Pemerkasaan Wanita</strong> — Program khusus untuk meningkatkan penyertaan wanita dalam ekonomi dan masyarakat</li>
+          <li><strong>Gotong-Royong Perdana</strong> — Aktiviti kemasyarakatan untuk memupuk semangat kejiranan dan perpaduan</li>
+        </ul>
+
+        <!-- Photo placeholder -->
+        <div class="photo-placeholder">
+          <div style="text-align:center">
+            <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            <p style="margin-top:4px">[ Photo — Sila upload gambar ]</p>
+          </div>
+        </div>
+
+        <h3>Bantuan Bencana</h3>
+        <p>FELDA juga menyediakan bantuan segera kepada peneroka dan komuniti yang terjejas akibat bencana alam seperti banjir, tanah runtuh, dan ribut. Bantuan ini merangkumi bantuan kewangan, bekalan makanan, keperluan asas, dan bantuan pemulihan pasca-bencana.</p>
+        <p>Pada musim banjir, FELDA menggerakkan pasukan bantuan dan pusat pemindahan sementara (PPS) di kawasan penempatan yang terjejas bagi memastikan keselamatan dan kesejahteraan peneroka.</p>
+
+        <h3>Cara Memohon Bantuan</h3>
+        <ol>
+          <li>Hubungi pejabat FELDA daerah atau negeri yang berdekatan</li>
+          <li>Isi borang permohonan bantuan yang disediakan</li>
+          <li>Sertakan dokumen sokongan yang berkaitan</li>
+          <li>Permohonan akan diproses oleh Jabatan Kebajikan dan Komuniti FELDA</li>
+          <li>Pemohon akan dimaklumkan mengenai status permohonan dalam tempoh 14 hari bekerja</li>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>FELDA</h4>
+          <p>Federal Land Development Authority<br>FELDA Tower, Platinum Park,<br>No. 11, Persiaran KLCC,<br>50088 Kuala Lumpur, Malaysia.</p><br>
+          <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>03-2191 2191</span></div>
+          <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>jks@felda.net.my</span></div>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="about-felda.html">About FELDA</a><a href="background.html">Corporate</a><a href="permohonan-online.html">Online Application</a><a href="#">Visitor Counter</a><a href="#">List of Assets</a></div>
+        <div class="footer-col"><h4>Services</h4><a href="#">Settlers' Accounting</a><a href="#">Education Loan</a><a href="#">Welfare Funds</a><a href="#">Land Settlement</a><a href="#">Tender</a></div>
+        <div class="footer-col"><h4>Support</h4><a href="#">FAQ</a><a href="#">Contact Us</a><a href="#">Feedback</a><a href="#">Sitemap</a><a href="#">Staff Login</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <div class="links"><a href="#">Privacy Policy</a><a href="#">Security Policy</a><a href="#">Disclaimer</a><a href="#">Sitemap</a></div>
+      <div class="copyright">Copyright Reserved 2025 © FELDA</div>
+      <div class="footer-socials">
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.85.38-1.78.64-2.73.76 1-.6 1.76-1.54 2.12-2.67-.93.55-1.96.95-3.06 1.17a4.77 4.77 0 0 0-8.12 4.35c-3.97-.2-7.5-2.1-9.85-5-.4.7-.64 1.5-.64 2.36 0 1.63.83 3.07 2.1 3.91-.77-.02-1.5-.24-2.13-.59v.06c0 2.28 1.62 4.18 3.76 4.62-.4.1-.82.16-1.25.16-.3 0-.6-.03-.89-.08.6 1.87 2.33 3.23 4.38 3.27-1.6 1.26-3.62 2-5.82 2-.38 0-.75-.02-1.12-.07A6.73 6.73 0 0 0 12.3 21c5.44 0 8.41-4.5 8.41-8.41 0-.13 0-.25-.01-.38.58-.42 1.08-.94 1.48-1.54z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
