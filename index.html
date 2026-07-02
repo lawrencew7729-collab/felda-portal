@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FELDA — Home</title>
+<title>FELDA — Laman Utama</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -66,9 +66,6 @@
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 90px; }
   .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 
-
-
-
   .logo img { display: block; }
   .logo-shine {
     position: relative;
@@ -114,18 +111,18 @@
   }
 
   /* ========== DESKTOP NAV ========== */
-  nav { display: flex; align-items: center; gap: 14px; }
+  nav { display: flex; align-items: center; gap: 2px; }
   nav > .nav-item,
   .nav-item-wrapper > .nav-item {
     text-decoration: none;
     color: var(--text-dark);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    padding: 10px 24px;
+    padding: 10px 16px;
     border-radius: 8px;
     transition: all 0.2s;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     white-space: nowrap;
     cursor: pointer;
   }
@@ -141,7 +138,7 @@
   nav .search-btn {
     width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
     border-radius: 50%; background: var(--bg-light); border: none; cursor: pointer;
-    transition: all 0.2s; margin-left: 8px;
+    transition: all 0.2s; margin-left: 4px;
   }
   nav .search-btn:hover { background: var(--orange-bg); }
   nav .search-btn:hover svg { fill: var(--orange); }
@@ -151,15 +148,15 @@
   .dropdown {
     position: absolute;
     top: 100%;
-    left: 0;
-    min-width: 220px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    min-width: 240px;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 12px 40px rgba(0,0,0,0.12);
     border: 1px solid var(--border);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
     transition: all 0.25s ease;
     z-index: 1001;
     padding: 8px;
@@ -172,7 +169,7 @@
   .nav-item-wrapper:hover .dropdown {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
   .dropdown a {
     display: block;
@@ -183,68 +180,16 @@
     font-size: 13px;
     font-weight: 500;
     transition: all 0.15s;
+    white-space: nowrap;
   }
   .dropdown a:hover { background: var(--orange-bg); color: var(--orange); padding-left: 22px; }
-  .dropdown .sub-label {
-    display: block;
-    padding: 6px 16px 2px;
+  .dropdown a .note {
     font-size: 11px;
-    font-weight: 600;
-    color: var(--orange);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    pointer-events: none;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 6px;
   }
   .dropdown .divider { height: 1px; background: var(--border); margin: 4px 12px; }
-
-  /* Mega dropdown */
-  .mega-dropdown {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
-    border: 1px solid var(--border);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.25s ease;
-    z-index: 1001;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    min-width: 480px;
-  }
-  .nav-item-wrapper:hover .mega-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-  }
-  .mega-dropdown .col { display: flex; flex-direction: column; gap: 2px; }
-  .mega-dropdown .col-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--orange);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 4px 12px 2px;
-    border-bottom: 1px solid var(--orange-bg);
-    margin-bottom: 2px;
-  }
-  .mega-dropdown a {
-    display: block;
-    padding: 8px 12px;
-    border-radius: 6px;
-    color: var(--text-dark);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
-    transition: all 0.15s;
-  }
-  .mega-dropdown a:hover { background: var(--orange-bg); color: var(--orange); padding-left: 18px; }
-  .mega-dropdown .sub-item { padding-left: 24px; font-size: 12px; color: var(--text-muted); }
 
   /* ========== HAMBURGER ========== */
   .hamburger {
@@ -316,7 +261,7 @@
   .mobile-menu .m-sub { display: none; padding-left: 16px; }
   .mobile-menu .m-sub.open { display: block; }
   .mobile-menu .m-sub a { font-size: 14px; padding: 10px 16px; border-bottom: none; }
-  .mobile-menu .m-sub a.sub2 { padding-left: 32px; font-size: 13px; color: var(--text-muted); }
+  .mobile-menu .m-sub a .note { font-size: 12px; color: var(--text-muted); font-weight: 400; }
   .mobile-overlay {
     display: none;
     position: fixed;
@@ -413,7 +358,7 @@
   .subsidiary-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 24px; align-items: center; }
   .subsidiary-item { padding: 14px 22px; background: #fff; border-radius: 10px; border: 1px solid var(--border); display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; cursor: pointer; text-decoration: none; }
   .subsidiary-item:hover { border-color: var(--orange); }
-  .subsidiary-item .subs-logo { height: 36px; width: auto; display: block; }
+  .subsidiary-item .subs-logo { height: 40px; width: auto; display: block; }
   .subsidiary-item .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .subsidiary-item .dot.orange { background: var(--orange); }
   .subsidiary-item .dot.navy { background: var(--navy); }
@@ -444,6 +389,9 @@
   .footer-socials a:hover svg { fill: #fff; }
 
   /* ========== RESPONSIVE ========== */
+  @media (max-width: 1100px) {
+    nav > .nav-item, .nav-item-wrapper > .nav-item { font-size: 11px; padding: 8px 10px; letter-spacing: 0.5px; }
+  }
   @media (max-width: 968px) {
     nav { display: none; }
     .hamburger { display: flex; }
@@ -478,54 +426,44 @@
 
 <!-- ========== MOBILE MENU ========== -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" class="active">Home</a>
+  <a href="index.html" class="active">UTAMA</a>
 
-  <div class="m-head" onclick="toggleMobileSub(this)">Public</div>
+  <div class="m-head" onclick="toggleMobileSub(this)">UMUM</div>
   <div class="m-sub">
-    <a href="#" class="sub2">— About FELDA</a>
-    <a href="#" class="sub2">— Kertas Putih FELDA</a>
-    <div style="height:1px;background:var(--border);margin:4px 16px"></div>
-    <a href="#" class="sub2">— Background</a>
-    <a href="#" class="sub2">— Mission & Vision</a>
-    <a href="#" class="sub2">— Board of Directors</a>
-    <a href="#" class="sub2">— Organization Chart</a>
-    <div style="height:1px;background:var(--border);margin:4px 16px"></div>
-    <a href="permohonan-online.html">Online Application</a>
-    <a href="sumbangan-khidmat-sosial.html">Social Services Contribution</a>
-    <a href="#">Visitor Counter</a>
-    <a href="#">List of Assets</a>
+    <a href="about-felda.html">FELDA</a>
+    <a href="background.html">Korporat</a>
+    <a href="permohonan-online.html">Permohonan Online</a>
+    <a href="sumbangan-khidmat-sosial.html">Sumbangan Khidmat Sosial</a>
+    <a href="#">Statistik Pelawat <span class="note">— Sedang dikemaskini</span></a>
+    <a href="#">Aset Felda <span class="note">— Sedang dikemaskini</span></a>
   </div>
 
-  <div class="m-head" onclick="toggleMobileSub(this)">Integrity</div>
+  <div class="m-head" onclick="toggleMobileSub(this)">INTEGRITI</div>
   <div class="m-sub">
-    <a href="#">Integrity Policy</a>
-    <a href="#">Whistleblower</a>
-    <a href="#">Governance</a>
+    <a href="buku.html">Buku</a>
+    <a href="suara-integriti.html">Suara Integriti</a>
   </div>
 
-  <div class="m-head" onclick="toggleMobileSub(this)">Media</div>
+  <div class="m-head" onclick="toggleMobileSub(this)">MEDIA</div>
   <div class="m-sub">
-    <a href="#">News & Announcements</a>
-    <a href="#">Gallery</a>
-    <a href="#">Video</a>
-    <a href="#">Publications</a>
+    <a href="#">Pengumuman &amp; Program <span class="note">— Sedang dikemaskini</span></a>
+    <a href="#">Hebahan Media <span class="note">— Sedang dikemaskini</span></a>
+    <a href="#">Booklet <span class="note">— Sedang dikemaskini</span></a>
+    <a href="#">Keratan Akhbar <span class="note">— Sedang dikemaskini</span></a>
+    <a href="#">Paparan Galeri <span class="note">— Sedang dikemaskini</span></a>
   </div>
 
-  <div class="m-head" onclick="toggleMobileSub(this)">Settlers</div>
+  <div class="m-head" onclick="toggleMobileSub(this)">PENEROKA</div>
   <div class="m-sub">
-    <a href="#" class="sub2">— Debt Statement</a>
-    <a href="#" class="sub2">— Bayaran Semula</a>
-    <div style="height:1px;background:var(--border);margin:4px 16px"></div>
-    <a href="#" class="sub2">— Education Loan Scheme</a>
-    <a href="#" class="sub2">— Death Beneficiaries Support</a>
-    <a href="#" class="sub2">— Welfare Funds</a>
-    <div style="height:1px;background:var(--border);margin:4px 16px"></div>
-    <a href="#">Land Settlement Location</a>
-    <a href="#" class="sub2">— Socioeconomic Contribution</a>
+    <a href="perakaunan-peneroka.html">Perakaunan Peneroka</a>
+    <a href="perkhidmatan.html">Perkhidmatan</a>
+    <a href="lokasi-rancangan.html">Lokasi Rancangan</a>
+    <a href="sumbangan-sosioekonomi.html">Sumbangan Sosioekonomi</a>
   </div>
 
-  <a href="#">Staff</a>
-  <a href="#">Tender</a>
+  <a href="#">PETUGAS <span class="note">— Sedang dikemaskini</span></a>
+  <a href="#">IKLAN <span class="note">— Sedang dikemaskini</span></a>
+  <a href="#">TENDER <span class="note">— Sedang dikemaskini</span></a>
 </div>
 
 <!-- ========== TOP BAR ========== -->
@@ -538,9 +476,9 @@
       <a href="#">Sitemap</a>
     </div>
     <div class="top-bar-right">
-      <a href="#">🇲🇾 BM</a>
+      <a href="#" class="active">🇲🇾 BM</a>
       <span class="divider"></span>
-      <a href="#" class="active">🇬🇧 EN</a>
+      <a href="#">🇬🇧 EN</a>
     </div>
   </div>
 </div>
@@ -555,87 +493,58 @@
     </a>
 
     <nav>
-      <a href="index.html" class="nav-item active">Home</a>
+      <a href="index.html" class="nav-item active">UTAMA</a>
 
-      <!-- PUBLIC Dropdown -->
+      <!-- UMUM Dropdown -->
       <div class="nav-item-wrapper">
-        <span class="nav-item has-sub">Public</span>
-        <div class="mega-dropdown">
-          <div class="col">
-            <span class="col-label">FELDA</span>
-            <a href="about-felda.html">About FELDA</a>
-            <a href="kertas-putih.html">Kertas Putih FELDA</a>
-            <span class="col-label" style="margin-top:10px;">Online Services</span>
-            <a href="permohonan-online.html">Online Application</a>
-            <a href="sumbangan-khidmat-sosial.html">Social Services Contribution</a>
-            <a href="#">Visitor Counter</a>
-          </div>
-          <div class="col">
-            <span class="col-label">Corporate</span>
-            <a href="background.html">Background</a>
-            <a href="misi-visi.html">Mission & Vision</a>
-            <a href="board.html">Board of Directors</a>
-            <a href="#">Organization Chart</a>
-            <span class="col-label" style="margin-top:10px;">Assets</span>
-            <a href="#">List of Assets</a>
-          </div>
+        <span class="nav-item has-sub">UMUM</span>
+        <div class="dropdown" style="min-width: 280px;">
+          <a href="about-felda.html">FELDA</a>
+          <a href="background.html">Korporat</a>
+          <div class="divider"></div>
+          <a href="permohonan-online.html">Permohonan Online</a>
+          <a href="sumbangan-khidmat-sosial.html">Sumbangan Khidmat Sosial</a>
+          <div class="divider"></div>
+          <a href="#">Statistik Pelawat <span class="note">— Sedang dikemaskini</span></a>
+          <a href="#">Aset Felda <span class="note">— Sedang dikemaskini</span></a>
         </div>
       </div>
 
-      <!-- INTEGRITY Dropdown -->
+      <!-- INTEGRITI Dropdown -->
       <div class="nav-item-wrapper">
-        <span class="nav-item has-sub">Integrity</span>
+        <span class="nav-item has-sub">INTEGRITI</span>
         <div class="dropdown">
-          <a href="#">Integrity Policy</a>
-          <a href="#">Whistleblower</a>
-          <a href="#">Governance</a>
+          <a href="buku.html">Buku</a>
+          <a href="suara-integriti.html">Suara Integriti</a>
         </div>
       </div>
 
       <!-- MEDIA Dropdown -->
       <div class="nav-item-wrapper">
-        <span class="nav-item has-sub">Media</span>
+        <span class="nav-item has-sub">MEDIA</span>
         <div class="dropdown">
-          <a href="#">News & Announcements</a>
-          <a href="#">Gallery</a>
-          <a href="#">Video</a>
-          <a href="#">Publications</a>
+          <a href="#">Pengumuman &amp; Program <span class="note">— Sedang dikemaskini</span></a>
+          <a href="#">Hebahan Media <span class="note">— Sedang dikemaskini</span></a>
+          <a href="#">Booklet <span class="note">— Sedang dikemaskini</span></a>
+          <a href="#">Keratan Akhbar <span class="note">— Sedang dikemaskini</span></a>
+          <a href="#">Paparan Galeri <span class="note">— Sedang dikemaskini</span></a>
         </div>
       </div>
 
-      <!-- SETTLERS Dropdown -->
+      <!-- PENEROKA Dropdown -->
       <div class="nav-item-wrapper">
-        <span class="nav-item has-sub">Settlers</span>
-        <div class="mega-dropdown" style="grid-template-columns:1fr 1fr;">
-          <div class="col">
-            <span class="col-label">Accounting</span>
-            <a href="#">Debt Statement</a>
-            <a href="#">Bayaran Semula</a>
-            <span class="col-label" style="margin-top:10px;">Services</span>
-            <a href="#">Education Loan Scheme</a>
-            <a href="#">Death Beneficiaries Support</a>
-            <a href="setlers.html">Welfare Funds</a>
-          </div>
-          <div class="col">
-            <span class="col-label">Land Settlement</span>
-            <a href="#">Johor</a>
-            <a href="#">Terengganu</a>
-            <a href="#">Perak</a>
-            <a href="#">Pahang</a>
-            <a href="#">Negeri Sembilan</a>
-            <a href="#">Melaka</a>
-            <a href="#">Sabah</a>
-            <a href="#">Kedah</a>
-            <span class="col-label" style="margin-top:4px;">Socioeconomic</span>
-            <a href="#">Community</a>
-            <a href="#">Education</a>
-            <a href="#">Entrepreneurship</a>
-          </div>
+        <span class="nav-item has-sub">PENEROKA</span>
+        <div class="dropdown" style="min-width: 280px;">
+          <a href="perakaunan-peneroka.html">Perakaunan Peneroka</a>
+          <a href="perkhidmatan.html">Perkhidmatan</a>
+          <a href="lokasi-rancangan.html">Lokasi Rancangan</a>
+          <a href="sumbangan-sosioekonomi.html">Sumbangan Sosioekonomi</a>
         </div>
       </div>
 
-      <a href="#" class="nav-item">Staff</a>
-      <a href="#" class="nav-item">Tender</a>
+      <a href="#" class="nav-item">PETUGAS</a>
+      <a href="#" class="nav-item">IKLAN</a>
+      <a href="#" class="nav-item">TENDER</a>
 
       <button class="search-btn">
         <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
@@ -653,11 +562,11 @@
   <div class="hero-bg"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="badge">Official Portal</div>
-      <h1>Welcome to <span>FELDA’s</span> Official Portal</h1>
-      <p>Federal Land Development Authority — Empowering communities, developing land, and building a sustainable future for Malaysia since 1956.</p>
+      <div class="badge">Portal Rasmi</div>
+      <h1>Selamat Datang ke <span>Portal Rasmi</span> FELDA</h1>
+      <p>Lembaga Kemajuan Tanah Persekutuan — Memperkasa komuniti, membangunkan tanah, dan membina masa depan yang mampan untuk Malaysia sejak 1956.</p>
       <a href="#" class="btn">
-        Discover More
+        Teroka Lagi
         <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </a>
     </div>
@@ -668,7 +577,7 @@
 <section>
   <div class="container">
     <div class="section-title">
-      <div class="label">Latest Updates</div>
+      <div class="label">Kemaskini Terkini</div>
       <h2>Berita Terkini</h2>
       <div class="divider"></div>
     </div>
@@ -699,7 +608,7 @@
 <section class="bg-light">
   <div class="container">
     <div class="section-title">
-      <div class="label">Digital Services</div>
+      <div class="label">Perkhidmatan Digital</div>
       <h2>Pautan Lain</h2>
       <div class="divider"></div>
     </div>
@@ -727,7 +636,7 @@
 <section>
   <div class="container">
     <div class="section-title">
-      <div class="label">Group of Companies</div>
+      <div class="label">Kumpulan Syarikat</div>
       <h2>Anak Syarikat Di Bawah FELDA</h2>
       <div class="divider"></div>
     </div>
@@ -772,24 +681,35 @@
           <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>jks@felda.net.my</span></div>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="about-felda.html">About FELDA</a><a href="background.html">Corporate</a><a href="permohonan-online.html">Online Application</a><a href="#">Visitor Counter</a><a href="#">List of Assets</a>
+          <h4>Pautan Pantas</h4>
+          <a href="about-felda.html">FELDA</a>
+          <a href="background.html">Korporat</a>
+          <a href="permohonan-online.html">Permohonan Online</a>
+          <a href="sumbangan-khidmat-sosial.html">Sumbangan Khidmat Sosial</a>
+          <a href="#">Statistik Pelawat</a>
+          <a href="#">Aset Felda</a>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
-          <a href="setlers.html">Settlers' Accounting</a><a href="setlers.html">Education Loan</a><a href="setlers.html">Welfare Funds</a><a href="setlers.html">Land Settlement</a><a href="#">Tender</a>
+          <h4>Perkhidmatan</h4>
+          <a href="perakaunan-peneroka.html">Perakaunan Peneroka</a>
+          <a href="perkhidmatan.html">Perkhidmatan</a>
+          <a href="lokasi-rancangan.html">Lokasi Rancangan</a>
+          <a href="sumbangan-sosioekonomi.html">Sumbangan Sosioekonomi</a>
         </div>
         <div class="footer-col">
-          <h4>Support</h4>
-          <a href="#">FAQ</a><a href="#">Contact Us</a><a href="#">Feedback</a><a href="#">Sitemap</a><a href="#">Staff Login</a>
+          <h4>Sokongan</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Hubungi Kami</a>
+          <a href="#">Maklum Balas</a>
+          <a href="#">Peta Laman</a>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <div class="links"><a href="#">Privacy Policy</a><a href="#">Security Policy</a><a href="#">Disclaimer</a><a href="#">Sitemap</a></div>
-      <div class="copyright">Copyright Reserved 2025 © FELDA</div>
+      <div class="links"><a href="#">Dasar Privasi</a><a href="#">Dasar Keselamatan</a><a href="#">Penafian</a><a href="#">Peta Laman</a></div>
+      <div class="copyright">Hak Cipta Terpelihara 2025 © FELDA</div>
       <div class="footer-socials">
         <a href="#"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg></a>
         <a href="#"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.85.38-1.78.64-2.73.76 1-.6 1.76-1.54 2.12-2.67-.93.55-1.96.95-3.06 1.17a4.77 4.77 0 0 0-8.12 4.35c-3.97-.2-7.5-2.1-9.85-5-.4.7-.64 1.5-.64 2.36 0 1.63.83 3.07 2.1 3.91-.77-.02-1.5-.24-2.13-.59v.06c0 2.28 1.62 4.18 3.76 4.62-.4.1-.82.16-1.25.16-.3 0-.6-.03-.89-.08.6 1.87 2.33 3.23 4.38 3.27-1.6 1.26-3.62 2-5.82 2-.38 0-.75-.02-1.12-.07A6.73 6.73 0 0 0 12.3 21c5.44 0 8.41-4.5 8.41-8.41 0-.13 0-.25-.01-.38.58-.42 1.08-.94 1.48-1.54z"/></svg></a>

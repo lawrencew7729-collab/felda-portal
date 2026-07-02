@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FELDA — Mission & Vision</title>
+<title>FELDA — Perakaunan Peneroka</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -13,7 +13,7 @@
   :root { --orange: #E8751A; --orange-dark: #D46512; --orange-bg: #FFF4EB; --navy: #1A2E4A; --navy-light: #2A4060; --gold: #C9A96E; --bg-light: #F8F9FA; --text-dark: #1e293b; --text-muted: #64748b; --border: #e2e8f0; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-  /* ========== TOP BAR (same as homepage) ========== */
+  /* ========== TOP BAR ========== */
   .top-bar { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 13px; padding: 6px 0; border-bottom: 3px solid var(--orange); }
   .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
   .top-bar-left { display: flex; gap: 18px; align-items: center; }
@@ -26,11 +26,10 @@
   .top-bar-right a.active { color: #fff; background: var(--orange); }
   .top-bar-right .divider { width: 1px; height: 14px; background: rgba(255,255,255,0.2); }
 
-  /* ========== HEADER (same as homepage) ========== */
+  /* ========== HEADER ========== */
   .header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04);}
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 90px; }
   .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-
   .logo img { display: block; }
   .logo-shine {
     position: relative;
@@ -145,7 +144,6 @@
     width: 4px;
     background: var(--orange);
   }
-  .sidebar .sub-link { padding-left: 36px; font-size: 13px; color: var(--text-muted); font-weight: 400; }
 
   /* Main content */
   .main-content h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); font-weight: 700; margin-bottom: 20px; }
@@ -162,7 +160,21 @@
   }
   .main-content .info-box p { margin-bottom: 0; font-size: 14px; color: var(--text-dark); }
 
-  /* ========== FOOTER (same) ========== */
+  /* Card styling */
+  .card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; }
+  .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .card-header { background: var(--navy); color: #fff; padding: 18px 24px; display: flex; align-items: center; gap: 12px; }
+  .card-header .icon { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .card-header h3 { margin: 0; font-size: 16px; font-weight: 600; color: #fff; }
+  .card-body { padding: 24px; }
+  .card-body p { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 12px; text-align: left; }
+  .card-body ul { padding-left: 20px; margin-bottom: 12px; }
+  .card-body li { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 4px; }
+  .card-btn { display: inline-block; padding: 10px 24px; background: var(--orange); color: #fff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 600; transition: background 0.2s; }
+  .card-btn:hover { background: var(--orange-dark); }
+
+  /* ========== FOOTER ========== */
   .footer { background: var(--navy); color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 0; }
   .footer-main { padding: 56px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
@@ -191,6 +203,7 @@
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .header .container { height: 64px; }
     .logo-shine img { height: 38px !important; }
+    .card-row { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
     .footer-grid { grid-template-columns: 1fr; }
@@ -228,10 +241,10 @@
     </a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#" class="active">Public</a>
+      <a href="#">Public</a>
       <a href="#">Integrity</a>
       <a href="#">Media</a>
-      <a href="#">Settlers</a>
+      <a href="setlers.html" class="active">Settlers</a>
       <a href="#">Staff</a>
       <a href="#">Tender</a>
       <button class="search-btn"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
@@ -243,9 +256,9 @@
 <section class="page-banner">
   <div class="container">
     <div class="breadcrumb">
-      <a href="index.html">Home</a> / <a href="#" class="active">Public</a> / <span>Mission & Vision</span>
+      <a href="index.html">Home</a> / <a href="#">Peneroka</a> / <span>Perakaunan Peneroka</span>
     </div>
-    <h1>Mission, Vision & Values</h1>
+    <h1>Perakaunan Peneroka</h1>
     <div class="divider"></div>
   </div>
 </section>
@@ -257,42 +270,93 @@
       <!-- Sidebar -->
       <aside class="sidebar">
         <div class="menu-card">
-          <div class="menu-title">UMUM</div>
-          <a href="about-felda.html">FELDA</a>
-          <a href="background.html">Korporat</a>
-          <a href="permohonan-online.html">Permohonan Online</a>
-          <a href="sumbangan-khidmat-sosial.html">Sumbangan Khidmat Sosial</a>
-          <a href="#">Statistik Pelawat</a>
-          <a href="#">Aset Felda</a>
+          <div class="menu-title">Peneroka</div>
+          <a href="perakaunan-peneroka.html" class="active">Perakaunan Peneroka</a>
+          <a href="perkhidmatan.html">Perkhidmatan</a>
+          <a href="lokasi-rancangan.html">Lokasi Rancangan</a>
+          <a href="sumbangan-sosioekonomi.html">Sumbangan Sosioekonomi</a>
         </div>
       </aside>
 
       <!-- Main Content -->
-      <div class="main-content"><h2>Vision</h2>
-        <p>To make FELDA a leading global plantation and agri-business organization renowned for its global brand and highly regarded by stakeholders.</p>
+      <div class="main-content">
+        <h2>Perakaunan Peneroka</h2>
+        <p>Maklumat berkenaan penyata hutang dan pembayaran semula untuk peneroka FELDA.</p>
 
-        <h2>Mission</h2>
-        <ul>
-          <li>To develop and manage world-class plantations and agri-businesses</li>
-          <li>To enhance the socio-economic well-being of settlers and the community</li>
-          <li>To practice sustainable development in all our operations</li>
-          <li>To foster integrity, transparency, and good governance</li>
-          <li>To embrace innovation and technology for operational excellence</li>
-        </ul>
-
-        <h2>Core Values</h2>
         <div class="info-box">
-          <p><strong>Integrity</strong> — Upholding the highest standards of honesty and ethical conduct in all our dealings.</p>
-        </div>
-        <div class="info-box">
-          <p><strong>Excellence</strong> — Striving for the highest quality in everything we do, from plantation management to customer service.</p>
-        </div>
-        <div class="info-box">
-          <p><strong>Unity</strong> — Fostering a spirit of collaboration and mutual respect among all stakeholders, especially our settler community.</p>
-        </div>
-        <div class="info-box">
-          <p><strong>Sustainability</strong> — Committing to environmental stewardship and responsible resource management for future generations.</p>
+          <p><strong>📌 Sedang Dikemaskini —</strong> Halaman ini dalam proses pengemaskinian. Maklumat lanjut akan dimuat naik dari semasa ke semasa.</p>
         </div>
 
-        <h3>Philosophy</h3>
-        <p>FELDA's philosophy is rooted in the belief that land development and agriculture can be powerful engines for socio-economic transformation. Our 70-year journey has demonstrated that with the right support, rural communities can thrive and contribute meaningfully to the nation's prosperity.</p>
+        <div class="card-row">
+          <div class="card">
+            <div class="card-header">
+              <div class="icon">📊</div>
+              <h3>Penyata Hutang</h3>
+            </div>
+            <div class="card-body">
+              <p>Semak penyata hutang peneroka secara dalam talian. Penyata ini menunjukkan baki hutang semasa, sejarah pembayaran, dan maklumat berkaitan pinjaman peneroka.</p>
+              <ul>
+                <li>Semak baki hutang semasa</li>
+                <li>Sejarah pembayaran</li>
+                <li>Maklumat pinjaman</li>
+                <li>Cetak penyata</li>
+              </ul>
+              <a href="#" class="card-btn">Semak Penyata</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="icon">💳</div>
+              <h3>Bayaran Semula — JomPay</h3>
+            </div>
+            <div class="card-body">
+              <p>Bayaran semula pinjaman boleh dilakukan melalui JomPay. Kaedah pembayaran yang pantas, selamat dan mudah diakses melalui internet banking atau aplikasi perbankan mudah alih.</p>
+              <ul>
+                <li>Pembayaran melalui JomPay</li>
+                <li>Rujukan bayaran: No. Peneroka</li>
+                <li>Bayaran automatik tersedia</li>
+                <li>Resit dan pengesahan segera</li>
+              </ul>
+              <a href="#" class="card-btn">Cara Bayaran</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>FELDA</h4>
+          <p>Federal Land Development Authority<br>FELDA Tower, Platinum Park,<br>No. 11, Persiaran KLCC,<br>50088 Kuala Lumpur, Malaysia.</p><br>
+          <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>03-2191 2191</span></div>
+          <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>jks@felda.net.my</span></div>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="#">About FELDA</a><a href="#">Corporate</a><a href="#">Online Application</a><a href="#">Visitor Counter</a><a href="#">List of Assets</a></div>
+        <div class="footer-col"><h4>Services</h4><a href="#">Settlers' Accounting</a><a href="#">Education Loan</a><a href="#">Welfare Funds</a><a href="#">Land Settlement</a><a href="#">Tender</a></div>
+        <div class="footer-col"><h4>Support</h4><a href="#">FAQ</a><a href="#">Contact Us</a><a href="#">Feedback</a><a href="#">Sitemap</a><a href="#">Staff Login</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <div class="links"><a href="#">Privacy Policy</a><a href="#">Security Policy</a><a href="#">Disclaimer</a><a href="#">Sitemap</a></div>
+      <div class="copyright">Copyright Reserved 2025 © FELDA</div>
+      <div class="footer-socials">
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.85.38-1.78.64-2.73.76 1-.6 1.76-1.54 2.12-2.67-.93.55-1.96.95-3.06 1.17a4.77 4.77 0 0 0-8.12 4.35c-3.97-.2-7.5-2.1-9.85-5-.4.7-.64 1.5-.64 2.36 0 1.63.83 3.07 2.1 3.91-.77-.02-1.5-.24-2.13-.59v.06c0 2.28 1.62 4.18 3.76 4.62-.4.1-.82.16-1.25.16-.3 0-.6-.03-.89-.08.6 1.87 2.33 3.23 4.38 3.27-1.6 1.26-3.62 2-5.82 2-.38 0-.75-.02-1.12-.07A6.73 6.73 0 0 0 12.3 21c5.44 0 8.41-4.5 8.41-8.41 0-.13 0-.25-.01-.38.58-.42 1.08-.94 1.48-1.54z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
