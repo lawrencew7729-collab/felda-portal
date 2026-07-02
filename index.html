@@ -449,7 +449,9 @@
     .quick-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .hero { height: 360px; }
-    .hero-content h1 { font-size: 26px; }
+    .hero-bg { background-position: center 30%; }
+    .hero-bg::after { background: linear-gradient(135deg, rgba(10,31,63,0.9) 0%, rgba(10,31,63,0.6) 50%, rgba(10,31,63,0.85) 100%); }
+    .hero-content h1 { font-size: 24px; }
     .hero-content p { font-size: 14px; }
     .hero-content .badge { font-size: 10px; padding: 3px 12px; }
     .hero-content .btn { font-size: 13px; padding: 10px 24px; }
@@ -669,7 +671,9 @@
     </div>
     <div class="news-grid">
       <div class="news-featured">
-        <div class="img"><div class="placeholder-icon"></div></div>
+        <div class="img" style="background-image:url('images/ramadan-2026.jpg');background-size:cover;background-position:center;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(0,0,0,0.3))"></div>
+        </div>
         <div class="body">
           <div class="tag">Hebahan 2026</div>
           <h3>Harmoni Ramadan: Jalinan Ukhuwah MB Pahang dan Warga FELDA Terus Utuh</h3>
