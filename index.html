@@ -70,6 +70,46 @@
 
 
   .logo img { display: block; }
+  .logo-shine {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .logo-shine img {
+    display: block;
+    height: 52px;
+    width: auto;
+  }
+  .logo-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 30%,
+      rgba(255,255,255,0.35) 40%,
+      rgba(255,255,248,0.5) 45%,
+      rgba(255,255,248,0.35) 50%,
+      transparent 60%,
+      transparent 100%
+    );
+    animation: shineSweep 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .logo-shine:hover::after {
+    animation-duration: 0.8s;
+  }
+  @keyframes shineSweep {
+    0%   { left: -100%; }
+    15%  { left: -100%; }
+    35%  { left: 120%; }
+    100% { left: 120%; }
+  }
 
   /* ========== DESKTOP NAV ========== */
   nav { display: flex; align-items: center; gap: 2px; }
@@ -487,8 +527,10 @@
 <!-- ========== HEADER ========== -->
 <header class="header">
   <div class="container">
-    <a href="#" class="logo">
-      <img src="images/felda-logo-70.svg" alt="FELDA 70th Anniversary" style="height:52px;width:auto;">
+    <a href="index.html" class="logo">
+      <div class="logo-shine">
+        <img src="images/felda-logo-70.jpg" alt="FELDA 70th Anniversary">
+      </div>
     </a>
 
     <nav>
