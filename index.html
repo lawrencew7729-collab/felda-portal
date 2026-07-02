@@ -75,11 +75,13 @@
     display: inline-block;
     overflow: hidden;
     border-radius: 4px;
+    max-width: 100%;
   }
   .logo-shine img {
     display: block;
     height: 78px;
     width: auto;
+    max-width: 100%;
   }
   .logo-shine::after {
     content: '';
@@ -446,7 +448,9 @@
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .hero { height: 420px; }
     .hero-content h1 { font-size: 32px; }
-    .header .container { height: 72px; }
+    .header .container { height: 64px; }
+    .logo-shine img { height: 42px !important; }
+    .logo-shine { max-width: 140px; }
   }
   @media (max-width: 640px) {
     .footer-grid { grid-template-columns: 1fr; }
