@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FELDA — Corporate Background</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; color: #1e293b; background: #fff; line-height: 1.6; overflow-x: hidden; }
+  :root { --orange: #E8751A; --orange-dark: #D46512; --orange-bg: #FFF4EB; --navy: #1A2E4A; --navy-light: #2A4060; --gold: #C9A96E; --bg-light: #F8F9FA; --text-dark: #1e293b; --text-muted: #64748b; --border: #e2e8f0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ========== TOP BAR (same as homepage) ========== */
+  .top-bar { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 13px; padding: 6px 0; border-bottom: 3px solid var(--orange); }
+  .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+  .top-bar-left { display: flex; gap: 18px; align-items: center; }
+  .top-bar-left a { color: rgba(255,255,255,0.75); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+  .top-bar-left a:hover { color: var(--orange); }
+  .top-bar-left a svg { width: 16px; height: 16px; fill: currentColor; }
+  .top-bar-right { display: flex; gap: 12px; align-items: center; }
+  .top-bar-right a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 2px 10px; border-radius: 4px; font-weight: 500; font-size: 12px; transition: all 0.2s; }
+  .top-bar-right a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+  .top-bar-right a.active { color: #fff; background: var(--orange); }
+  .top-bar-right .divider { width: 1px; height: 14px; background: rgba(255,255,255,0.2); }
+
+  /* ========== HEADER (same as homepage) ========== */
+  .header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04);}
+  .header .container { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+  .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-figure { position: relative; width: 50px; height: 62px; flex-shrink: 0; overflow: hidden; border-radius: 4px; }
+  .logo-figure img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .logo-figure::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(105deg,transparent 0%,transparent 35%,rgba(255,255,255,0.5) 45%,rgba(255,255,255,0.6) 50%,rgba(255,255,255,0.5) 55%,transparent 65%,transparent 100%); animation: shine 4s ease-in-out infinite; pointer-events: none; }
+  @keyframes shine { 0%{left:-100%}20%{left:-100%}40%{left:120%}100%{left:120%} }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-text strong { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); letter-spacing: 1px; line-height: 1.2; }
+  .logo-text span { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
+
+  nav { display: flex; align-items: center; gap: 2px; }
+  nav a { text-decoration: none; color: var(--text-dark); font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
+  nav a:hover { color: var(--orange); background: var(--orange-bg); }
+  nav a.active { color: #fff; background: var(--orange); }
+  nav .search-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bg-light); border: none; cursor: pointer; transition: all 0.2s; margin-left: 8px; }
+  nav .search-btn:hover { background: var(--orange-bg); }
+  nav .search-btn:hover svg { fill: var(--orange); }
+  nav .search-btn svg { width: 18px; height: 18px; fill: var(--text-muted); transition: fill 0.2s; }
+
+  /* ========== PAGE BANNER ========== */
+  .page-banner {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    padding: 60px 0 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 0%, rgba(232,117,26,0.1) 0%, transparent 60%);
+  }
+  .page-banner .container { position: relative; z-index: 1; }
+  .page-banner .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+  .page-banner .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  .page-banner .breadcrumb a:hover { color: var(--orange); }
+  .page-banner .breadcrumb span { color: var(--orange); }
+  .page-banner h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #fff; }
+  .page-banner .divider { width: 60px; height: 3px; background: var(--orange); margin-top: 14px; border-radius: 2px; }
+
+  /* ========== CONTENT LAYOUT ========== */
+  .content-section { padding: 56px 0 80px; }
+  .content-grid { display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
+
+  /* Sidebar */
+  .sidebar { position: sticky; top: 100px; align-self: start; }
+  .sidebar .menu-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .sidebar .menu-title {
+    background: var(--orange);
+    color: #fff;
+    padding: 16px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.15s;
+    position: relative;
+  }
+  .sidebar a:last-child { border-bottom: none; }
+  .sidebar a:hover, .sidebar a.active { background: var(--orange-bg); color: var(--orange); padding-left: 26px; }
+  .sidebar a.active::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--orange);
+  }
+  .sidebar .sub-link { padding-left: 36px; font-size: 13px; color: var(--text-muted); font-weight: 400; }
+
+  /* Main content */
+  .main-content h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); font-weight: 700; margin-bottom: 20px; }
+  .main-content h3 { font-size: 20px; font-weight: 600; color: var(--navy); margin: 28px 0 12px; }
+  .main-content p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; text-align: justify; }
+  .main-content ul, .main-content ol { padding-left: 24px; margin-bottom: 16px; }
+  .main-content li { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 6px; }
+  .main-content .info-box {
+    background: var(--orange-bg);
+    border-left: 4px solid var(--orange);
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+  }
+  .main-content .info-box p { margin-bottom: 0; font-size: 14px; color: var(--text-dark); }
+
+  /* ========== FOOTER (same) ========== */
+  .footer { background: var(--navy); color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 0; }
+  .footer-main { padding: 56px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--orange); margin-bottom: 18px; font-weight: 600; position: relative; padding-bottom: 10px; }
+  .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: var(--orange); }
+  .footer-col p { line-height: 1.8; font-size: 13px; color: rgba(255,255,255,0.65); }
+  .footer-col a { display: block; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; padding: 4px 0; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-col .contact-item { display: flex; gap: 10px; margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.65); }
+  .footer-col .contact-item svg { width: 16px; height: 16px; fill: var(--orange); flex-shrink: 0; margin-top: 3px; }
+  .footer-bottom { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom .links { display: flex; gap: 20px; }
+  .footer-bottom .links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 12px; transition: color 0.2s; }
+  .footer-bottom .links a:hover { color: var(--orange); }
+  .footer-bottom .copyright { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .footer-socials { display: flex; gap: 10px; }
+  .footer-socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .footer-socials a:hover { background: var(--orange); }
+  .footer-socials a svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.7); }
+  .footer-socials a:hover svg { fill: #fff; }
+
+  @media (max-width: 968px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    nav { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .header .container { height: 64px; }
+  }
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .page-banner h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> FAQ</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Contact</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg> Feedback</a>
+      <a href="#">Sitemap</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#">🇲🇾 BM</a>
+      <span class="divider"></span>
+      <a href="#" class="active">🇬🇧 EN</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HEADER ========== -->
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-figure"><img src="images/felda-logo.jpg" alt="FELDA Logo"></div>
+      <div class="logo-text"><strong>FELDA</strong><span>Federal Land Development Authority</span></div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#" class="active">Public</a>
+      <a href="#">Integrity</a>
+      <a href="#">Media</a>
+      <a href="#">Settlers</a>
+      <a href="#">Staff</a>
+      <a href="#">Tender</a>
+      <button class="search-btn"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== PAGE BANNER ========== -->
+<section class="page-banner">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / <a href="#" class="active">Public</a> / <span>About FELDA</span>
+    </div>
+    <h1>Corporate Background</h1>
+    <div class="divider"></div>
+  </div>
+</section>
+
+<!-- ========== CONTENT ========== -->
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="menu-card">
+          <div class="menu-title">Public</div>
+          <a href="#" class="active">About FELDA</a>
+          <a href="#">Kertas Putih FELDA</a>
+          <div style="height:1px;background:var(--border);margin:0 16px"></div>
+          <a href="#" class="active">Background</a>
+          <a href="#">Mission & Vision</a>
+          <a href="#">Board of Directors</a>
+          <a href="#">Organization Chart</a>
+          <div style="height:1px;background:var(--border);margin:0 16px"></div>
+          <a href="#">Online Application</a>
+          <a href="#">Social Services Contribution</a>
+          <a href="#">Visitor Counter</a>
+          <a href="#">List of Assets</a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content"><h2>Corporate Background</h2>
+        <p>FELDA has evolved from a land development agency into a diversified corporation with interests in plantation management, downstream processing, property development, and logistics. Today, FELDA manages some of the largest oil palm estates in the world and has a significant presence in the global vegetable oils market.</p>
+        <p>The corporatisation of FELDA in recent years has enabled the organisation to operate more efficiently, leveraging its vast land bank and expertise to create sustainable value for its stakeholders.</p>
+
+        <h3>Core Business Activities</h3>
+        <ul>
+          <li><strong>Plantation Management:</strong> Managing over 800,000 hectares of oil palm and rubber plantations</li>
+          <li><strong>Downstream Processing:</strong> Palm oil refining, oleochemicals, and specialty fats</li>
+          <li><strong>Property Development:</strong> Developing FELDA's land bank for commercial and residential use</li>
+          <li><strong>Logistics:</strong> Transportation and supply chain management for agricultural produce</li>
+          <li><strong>Research & Development:</strong> Agricultural research and innovation for sustainable farming</li>
+        </ul>
+
+        <h3>Corporate Structure</h3>
+        <p>FELDA operates through its headquarters at FELDA Tower, Kuala Lumpur, with regional offices throughout Malaysia. The organisation is led by a Board of Directors and managed by a team of experienced professionals across various divisions.</p>
+
+        <h3>Subsidiary Companies</h3>
+        <ul>
+          <li>FELDA Plantation Management Sdn. Bhd. (FPMSB)</li>
+          <li>Koperasi Gabungan Bumiputera (KGFB)</li>
+          <li>Koperasi FELDA (KF)</li>
+          <li>Yayasan FELDA</li>
+          <li>ENCORP</li>
+          <li>FELDA Investment Corporation (FIC)</li>
+          <li>Majlis Sumber Manusia (MSM)</li>
+          <li>Warga Cinta Amanah FELDA (WCAAF)</li>
+        </ul>

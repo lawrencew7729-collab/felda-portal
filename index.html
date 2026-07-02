@@ -66,33 +66,10 @@
   .header .container { display: flex; align-items: center; justify-content: space-between; height: 80px; }
   .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 
-  .logo-figure {
-    position: relative;
-    width: 50px; height: 62px;
-    flex-shrink: 0;
-    overflow: hidden;
-    border-radius: 4px;
-  }
-  .logo-figure img { width: 100%; height: 100%; object-fit: contain; display: block; }
-  .logo-figure::after {
-    content: '';
-    position: absolute; top: 0; left: -100%;
-    width: 60%; height: 100%;
-    background: linear-gradient(105deg, transparent 0%, transparent 35%, rgba(255,255,255,0.5) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.5) 55%, transparent 65%, transparent 100%);
-    animation: shine 4s ease-in-out infinite;
-    pointer-events: none;
-  }
-  @keyframes shine {
-    0%   { left: -100%; }
-    20%  { left: -100%; }
-    40%  { left: 120%; }
-    100% { left: 120%; }
-  }
-  .logo-figure:hover::after { animation-duration: 0.8s; }
 
-  .logo-text { display: flex; flex-direction: column; }
-  .logo-text strong { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); letter-spacing: 1px; line-height: 1.2; }
-  .logo-text span { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
+
+
+  .logo img { display: block; }
 
   /* ========== DESKTOP NAV ========== */
   nav { display: flex; align-items: center; gap: 2px; }
@@ -511,13 +488,7 @@
 <header class="header">
   <div class="container">
     <a href="#" class="logo">
-      <div class="logo-figure">
-        <img src="images/felda-logo.jpg" alt="FELDA Logo">
-      </div>
-      <div class="logo-text">
-        <strong>FELDA</strong>
-        <span>Federal Land Development Authority</span>
-      </div>
+      <img src="images/felda-logo-70.svg" alt="FELDA 70th Anniversary" style="height:52px;width:auto;">
     </a>
 
     <nav>
